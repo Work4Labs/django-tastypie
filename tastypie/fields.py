@@ -631,7 +631,7 @@ class RelatedField(ApiField):
         unique_keys = {
             k: v
             for k, v in data.items()
-            if k == 'pk' or (hasattr(fk_resource, k) and getattr(fk_resource, k).unique)
+            if k == 'pk' or (hasattr(fk_resource.fields, k) and getattr(fk_resource.fields, k).unique)
         }
 
         # If we have no unique keys, we shouldn't go look for some resource that
